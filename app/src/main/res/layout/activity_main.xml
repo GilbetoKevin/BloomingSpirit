@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/rectangulo_verde"
+        android:layout_width="300dp"
+        android:layout_height="265dp"
+        android:background="@drawable/capa"
+        android:elevation="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <EditText
+        android:id="@+id/editTextTextPassword3"
+        android:elevation="2dp"
+        android:layout_width="272dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/text_login"
+        android:drawableStart="@drawable/ic_lock"
+        android:drawablePadding="5dp"
+        android:ems="10"
+        android:fontFamily="@font/segoe"
+        android:hint="Contraseña"
+        android:inputType="textPassword"
+        android:padding="10dp"
+        android:textColor="#80000000"
+        android:textColorHint="#80000000"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/rectangulo_verde"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="@+id/rectangulo_verde"
+        app:layout_constraintTop_toBottomOf="@+id/editTextUsuario" />
+
+    <TextView
+        android:id="@+id/textView"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:fontFamily="@font/segoe_bold"
+        android:text="Bienvenido a"
+        android:textColor="#FEE440"
+        android:textIsSelectable="false"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextUsuario"
+        android:elevation="2dp"
+        android:layout_width="272dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/text_login"
+        android:drawableStart="@drawable/ic_email"
+        android:drawablePadding="5dp"
+        android:ems="10"
+        android:fontFamily="@font/segoe"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:padding="10dp"
+        android:textColor="#80000000"
+        android:textColorHint="#80000000"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/rectangulo_verde"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="@+id/rectangulo_verde"
+        app:layout_constraintTop_toTopOf="@+id/rectangulo_verde" />
+
+    <Button
+        android:id="@+id/bot_acceder"
+        android:elevation="3dp"
+        android:layout_width="155dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/bot_login"
+        android:fontFamily="@font/segoe_bold"
+        android:text="Iniciar seción"
+        android:textColor="#BF000000"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="@+id/rectangulo_verde"
+        app:layout_constraintStart_toStartOf="@+id/rectangulo_verde"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword3" />
+
+    <Button
+        android:id="@+id/bot_acceder2"
+        android:elevation="3dp"
+        android:layout_width="155dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bot_registro"
+        android:fontFamily="@font/segoe_bold"
+        android:text="Registrarse"
+        android:textColor="#BF000000"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="@+id/rectangulo_verde"
+        app:layout_constraintStart_toStartOf="@+id/rectangulo_verde"
+        app:layout_constraintTop_toBottomOf="@+id/bot_acceder" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="247dp"
+        android:layout_height="230dp"
+        android:layout_marginTop="128dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

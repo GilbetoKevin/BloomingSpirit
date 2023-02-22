@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#9B5DE5"
+    tools:context=".Registro">
+
+    <TextView
+        android:id="@+id/rectangulo_verde"
+        android:elevation="2dp"
+        android:layout_width="330dp"
+        android:layout_height="503dp"
+        android:background="@drawable/capa"
+        android:textColorHint="#80000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.546" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:elevation="3dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/segoe_semibold"
+        android:text="Registro de usuario"
+        android:textColor="#FEE440"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="@+id/rectangulo_verde"
+        app:layout_constraintStart_toStartOf="@+id/rectangulo_verde"
+        app:layout_constraintTop_toTopOf="@+id/rectangulo_verde" />
+
+
+    <EditText
+        android:id="@+id/editTextUsuario"
+        android:elevation="3dp"
+        android:layout_width="272dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="96dp"
+        android:background="@drawable/text_login"
+        android:drawableStart="@drawable/ic_usuario"
+        android:drawablePadding="5dp"
+        android:ems="10"
+        android:fontFamily="@font/segoe"
+        android:hint="Usuario"
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        android:textColor="#80000000"
+        android:textColorHint="#80000000"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/rectangulo_verde"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="@+id/rectangulo_verde"
+        app:layout_constraintTop_toTopOf="@+id/rectangulo_verde" />
+
+
+    <EditText
+        android:id="@+id/editTextUsuario2"
+        android:elevation="3dp"
+        android:layout_width="272dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/text_login"
+        android:drawableStart="@drawable/ic_calendario"
+        android:drawablePadding="5dp"
+        android:ems="10"
+        android:fontFamily="@font/segoe"
+        android:hint="Fecha de nacimiento"
+        android:inputType="date"
+        android:padding="10dp"
+        android:textColor="#80000000"
+        android:textColorHint="#80000000"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/rectangulo_verde"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="@+id/rectangulo_verde"
+        app:layout_constraintTop_toBottomOf="@+id/editTextUsuario" />
+
+    <EditText
+        android:id="@+id/editTextCorreo"
+        android:elevation="3dp"
+        android:layout_width="272dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/text_login"
+        android:drawableStart="@drawable/ic_email"
+        android:drawablePadding="5dp"
+        android:ems="10"
+        android:fontFamily="@font/segoe"
+        android:hint="Correo"
+        android:inputType="textEmailAddress"
+        android:padding="10dp"
+        android:textColor="#80000000"
+        android:textColorHint="#80000000"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/rectangulo_verde"
+        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintStart_toStartOf="@+id/rectangulo_verde"
+        app:layout_constraintTop_toBottomOf="@+id/editTextUsuario2" />
+
+    <EditText
+        android:id="@+id/editTextTextPassword"
+        android:elevation="3dp"
+        android:layout_width="272dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/text_login"
+        android:drawableStart="@drawable/ic_lock"
+        android:drawablePadding="5dp"
+        android:ems="10"
+        android:fontFamily="@font/segoe"
+        android:hint="Contraseña"
+        android:inputType="textPassword"
+        android:padding="10dp"
+        android:textColor="#80000000"
+        android:textColorHint="#80000000"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/rectangulo_verde"
+        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintStart_toStartOf="@+id/rectangulo_verde"
+        app:layout_constraintTop_toBottomOf="@+id/editTextCorreo" />
+
+
+    <EditText
+        android:id="@+id/editTextTextPassword2"
+        android:elevation="3dp"
+        android:layout_width="272dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/text_login"
+        android:drawableStart="@drawable/ic_lock"
+        android:drawablePadding="5dp"
+        android:ems="10"
+        android:fontFamily="@font/segoe"
+        android:hint="Confirme contraseña"
+        android:inputType="textPassword"
+        android:padding="10dp"
+        android:textColor="#80000000"
+        android:textColorHint="#80000000"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/rectangulo_verde"
+        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintStart_toStartOf="@+id/rectangulo_verde"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:elevation="3dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/segoe_bold"
+        android:text="Se te enviara un código de verificación"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="@+id/rectangulo_verde"
+        app:layout_constraintHorizontal_bias="0.341"
+        app:layout_constraintStart_toStartOf="@+id/rectangulo_verde"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2" />
+
+    <TextView
+        android:id="@+id/textView19"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/segoe_bold"
+        android:text="Nota: Los caracteres especiales permitidos son los siguientes:"
+        android:textColor="#000000"
+        android:textSize="10dp"
+        app:layout_constraintStart_toStartOf="@+id/rectangulo_verde"
+        app:layout_constraintTop_toBottomOf="@+id/rectangulo_verde" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:fontFamily="@font/segoe_bold"
+        android:text="-@#$%^+="
+        android:textColor="#000000"
+        android:textSize="10dp"
+        app:layout_constraintStart_toStartOf="@+id/rectangulo_verde"
+        app:layout_constraintTop_toBottomOf="@+id/rectangulo_verde" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:elevation="3dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/segoe_italic"
+        android:text="Minimo 6 caracteres y un caracter especial"
+        android:textColor="#000000"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword2"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:elevation="3dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/segoe_bold"
+        android:text="al correo que ingresaste"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="@+id/rectangulo_verde"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="@+id/rectangulo_verde"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+
+    <Button
+        android:id="@+id/bot_acceder"
+        android:elevation="3dp"
+        android:layout_width="172dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bot_login"
+        android:fontFamily="sans-serif-black"
+        android:text="Enviar"
+        android:textColor="#BF000000"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="@+id/rectangulo_verde"
+        app:layout_constraintStart_toStartOf="@+id/rectangulo_verde"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".Inicio">
+
+
+
+    <Button
+        android:id="@+id/bot_cerrarSesion"
+        android:layout_width="251dp"
+        android:layout_height="55dp"
+        android:background="@drawable/bot_login"
+        android:fontFamily="sans-serif-black"
+        android:text="Cerrar Sesion"
+        android:textColor="#BF000000"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:background="#9B5DE5"
+        android:fontFamily="@font/corbel_bold"
+        android:gravity="center"
+        android:text="¿Que deseas hacer?"
+        android:textColor="#FEE440"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonTest"
+        android:elevation="3dp"
+        android:layout_width="0dp"
+        android:layout_height="140dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/celeste"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:elevation="3dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/corbel_bold"
+        android:text="Tests "
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/buttonTest"
+        app:layout_constraintTop_toTopOf="@+id/buttonTest" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:elevation="3dp"
+        android:layout_width="229dp"
+        android:layout_height="82dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/segoe"
+        android:text="Puedes hacer cuestionarios con los que puedes conocer detalles sobre  tu  personalidad y medir tu estado  emocional y personal "
+        android:textColor="#000000"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+
+    <Button
+        android:id="@+id/textViewRosa"
+        android:elevation="3dp"
+        android:layout_width="0dp"
+        android:layout_height="140dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/rosa"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonTest" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:elevation="2dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/corbel_bold"
+        android:text="Hábitos y rutinas "
+        android:textColor="#000000"
+        android:textSize="20sp"
+
+        app:layout_constraintStart_toStartOf="@+id/textViewRosa"
+        app:layout_constraintTop_toTopOf="@+id/textViewRosa" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:elevation="2dp"
+        android:layout_width="229dp"
+        android:layout_height="82dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/segoe"
+        android:text="Puedes implementar rutinas que te  ayuden a organizar mejor tu tiempo, también desarrollar hábitos que  mejoren tu rendimiento del día a día "
+        android:textColor="#000000"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <Button
+        android:id="@+id/textViewAmarillo"
+        android:elevation="3dp"
+        android:layout_width="0dp"
+        android:layout_height="140dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/amarillo"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewRosa" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:elevation="2dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/corbel_bold"
+        android:text="Agenda"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/textViewAmarillo"
+        app:layout_constraintTop_toTopOf="@+id/textViewAmarillo" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:elevation="2dp"
+        android:layout_width="228dp"
+        android:layout_height="92dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/segoe"
+        android:text="Puedes escribir en un diario tus experiencias del día, lo que puede ayudarte a tener un registro de tus emociones y a rememorar buenos momentos"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+    <Button
+        android:id="@+id/textViewAzul"
+        android:elevation="3dp"
+        android:layout_width="0dp"
+        android:layout_height="140dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/azul"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAmarillo" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:elevation="2dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/corbel_bold"
+        android:text="Fitness"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/textViewAzul"
+        app:layout_constraintTop_toTopOf="@+id/textViewAzul" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:elevation="2dp"
+        android:layout_width="228dp"
+        android:layout_height="92dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/segoe"
+        android:text="Puedes seguir recomendaciones  sobre como tener un estilo de vida mas saludable, diferentes ejercicios y comidas que puedes hacer "
+        android:textColor="#000000"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/textView10"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:elevation="3dp"
+        android:layout_width="135dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonTest"
+        app:layout_constraintEnd_toEndOf="@+id/buttonTest"
+        app:layout_constraintTop_toTopOf="@+id/buttonTest"
+        app:srcCompat="@drawable/image_test" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:elevation="2dp"
+        android:layout_width="116dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewRosa"
+        app:layout_constraintEnd_toEndOf="@+id/textViewRosa"
+        app:layout_constraintTop_toTopOf="@+id/textViewRosa"
+        app:srcCompat="@drawable/image_rutina" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:elevation="2dp"
+        android:layout_width="131dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewAmarillo"
+        app:layout_constraintEnd_toEndOf="@+id/textViewAmarillo"
+        app:layout_constraintTop_toTopOf="@+id/textViewAmarillo"
+        app:layout_constraintVertical_bias="0.59"
+        app:srcCompat="@drawable/image_agenda" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:elevation="2dp"
+        android:layout_width="147dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewAzul"
+        app:layout_constraintEnd_toEndOf="@+id/textViewAzul"
+        app:layout_constraintTop_toTopOf="@+id/textViewAzul"
+        app:srcCompat="@drawable/image_fitness" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
