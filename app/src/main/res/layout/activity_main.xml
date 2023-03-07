@@ -40,21 +40,6 @@
         app:layout_constraintStart_toStartOf="@+id/rectangulo_verde"
         app:layout_constraintTop_toBottomOf="@+id/editTextUsuario" />
 
-    <TextView
-        android:id="@+id/textView"
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:fontFamily="@font/segoe_bold"
-        android:text="Bienvenido a"
-        android:textColor="#FEE440"
-        android:textIsSelectable="false"
-        android:textSize="40sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <EditText
         android:id="@+id/editTextUsuario"
         android:elevation="2dp"
@@ -109,9 +94,9 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="247dp"
-        android:layout_height="230dp"
-        android:layout_marginTop="128dp"
+        android:layout_width="277dp"
+        android:layout_height="253dp"
+        android:layout_marginTop="100dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
