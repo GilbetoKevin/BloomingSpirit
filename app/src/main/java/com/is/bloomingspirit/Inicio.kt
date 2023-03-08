@@ -18,17 +18,17 @@ class Inicio : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
 
+
         setContentView(R.layout.activity_inicio)
-        val botExt = findViewById<Button>(R.id.bot_cerrarSesion)
-        botExt.setOnClickListener {
-            singOut()
+
+        var butPerfil=findViewById<Button>(R.id.but_perfil)
+        butPerfil.setOnClickListener{
+            val intento1 = Intent(this,Perfil::class.java)
+            startActivity(intento1)
         }
 
 
+
     }
-    private fun singOut(){
-        Firebase.auth.signOut()
-        val intent= Intent(this, MainActivity::class.java)
-        startActivity(intent)
-    }
+
 }

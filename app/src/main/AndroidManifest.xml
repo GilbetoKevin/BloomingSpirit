@@ -13,6 +13,9 @@
         android:theme="@style/Theme.BloomingSpirit"
         tools:targetApi="31">
         <activity
+            android:name=".Perfil"
+            android:exported="false" />
+        <activity
             android:name=".Inicio"
             android:exported="false">
             <meta-data
