@@ -9,14 +9,14 @@
 
     <TextView
         android:id="@+id/rectangulo_verde"
-        android:layout_width="300dp"
-        android:layout_height="265dp"
+        android:layout_width="321dp"
+        android:layout_height="342dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/capa"
         android:elevation="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/editTextTextPassword3"
@@ -91,6 +91,27 @@
         app:layout_constraintEnd_toEndOf="@+id/rectangulo_verde"
         app:layout_constraintStart_toStartOf="@+id/rectangulo_verde"
         app:layout_constraintTop_toBottomOf="@+id/bot_acceder" />
+
+    <Button
+        android:id="@+id/bot_recuperacion"
+        android:layout_width="155dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bot_recuperacion"
+        android:elevation="3dp"
+        android:fontFamily="@font/segoe_bold"
+        android:paddingLeft="5dp"
+        android:paddingTop="0dp"
+        android:paddingRight="5dp"
+        android:paddingBottom="0dp"
+        android:text="Recuperacion de Email"
+        android:textAllCaps="false"
+        android:textColor="#BF000000"
+        android:textSize="12sp"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="@+id/rectangulo_verde"
+        app:layout_constraintStart_toStartOf="@+id/rectangulo_verde"
+        app:layout_constraintTop_toBottomOf="@+id/bot_acceder2" />
 
     <ImageView
         android:id="@+id/imageView"

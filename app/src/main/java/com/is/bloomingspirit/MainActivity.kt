@@ -32,6 +32,12 @@ class MainActivity : AppCompatActivity() {
         var boton2=findViewById<Button>(R.id.bot_acceder2)
         var text1=findViewById<EditText>(R.id.editTextUsuario)
         var text2=findViewById<EditText>(R.id.editTextTextPassword3)
+        var botonRecuperacion=findViewById<Button>(R.id.bot_recuperacion)
+
+        botonRecuperacion.setOnClickListener{
+            val intento1 = Intent(this,RecuperacionContra::class.java)
+            startActivity(intento1)
+        }
 
 
         boton1.setOnClickListener{

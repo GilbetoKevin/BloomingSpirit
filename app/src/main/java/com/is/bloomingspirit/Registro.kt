@@ -36,23 +36,27 @@ class Registro : AppCompatActivity() {
         val email=findViewById<EditText>(R.id.editTextCorreo)
         val contra=findViewById<EditText>(R.id.editTextTextPassword)
         val contraConf=findViewById<EditText>(R.id.editTextTextPassword2)
+        val usuario=findViewById<EditText>(R.id.editTextUsuario)
+        val fecha=findViewById<EditText>(R.id.editTextFecha)
+
 
 
         enviar.setOnClickListener{
 
             val mEmail=email.text.toString()
+            val mUser=usuario.text.toString()
+            val mFecha=fecha.text.toString()
             val mPassword= contra.text.toString()
-           // db.collection("users").document(mEmail).set(
-               // hashMapOf("usuario" to mUser,
-                //    "contraseña" to mPassword)
-            //)
+            print(mEmail)
+            print(mUser)
+            print(mFecha)
+            print(email)
+            print(mPassword)
+
             val mRepeatPassword=contraConf.text.toString()
 
-
-            val passwordRegex = Pattern.compile("^"+
-                    "(?=.*[-@#$%^&+=])" +
-                    ".{6,}" +
-                    "$")
+            // Mínimo ocho caracteres, al menos una letra y un número:
+            val passwordRegex = Pattern.compile("^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$")
             if(mEmail.isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(mEmail).matches()) {
                 Toast.makeText(this, "Ingrese un email valido.",
                     Toast.LENGTH_SHORT).show()
@@ -64,8 +68,7 @@ class Registro : AppCompatActivity() {
                     Toast.LENGTH_SHORT).show()
             } else {
                 db.collection("users").document(mEmail).set(
-                    hashMapOf("usuario" to "",
-                        "contraseña" to mPassword)
+                    hashMapOf("usuario" to mUser,"fecha" to mFecha,"contraseña" to mPassword)
                 )
 
                 createAccount(mEmail, mPassword)
