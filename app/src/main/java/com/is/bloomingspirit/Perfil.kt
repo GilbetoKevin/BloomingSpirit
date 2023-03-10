@@ -3,8 +3,11 @@ package com.`is`.bloomingspirit
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
+import androidx.core.view.isGone
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -21,17 +24,99 @@ class Perfil : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_perfil)
 
-        var nombre:String="";
-        var fecha:String="";
-        var text1=findViewById<TextView>(R.id.textTest)
-        var text2=findViewById<TextView>(R.id.textTest1)
+        var nombre:String=""
+        var fecha:String=""
+        var contraseña:String=""
+        var textNombre=findViewById<TextView>(R.id.textNombre)
+        var textFecha=findViewById<TextView>(R.id.textFecha)
         val botExt = findViewById<Button>(R.id.bot_cerrarSesion)
         val botInicio = findViewById<Button>(R.id.but_inicio)
+        val botNombre = findViewById<Button>(R.id.but_usuario)
+        val botFecha = findViewById<Button>(R.id.but_fecha)
+        val botSabeNombre = findViewById<Button>(R.id.but_sabe_nombre)
+        val botSabeFecha = findViewById<Button>(R.id.but_sabe_fecha)
+        var editNombre=findViewById<EditText>(R.id.editNombre)
+        var editFecha=findViewById<EditText>(R.id.editFecha)
+
+        botNombre.setOnClickListener{
+            textNombre.visibility= View.GONE
+            editNombre.visibility=View.VISIBLE
+            botNombre.visibility=View.GONE
+            botSabeNombre.visibility=View.VISIBLE
+        }
+
+        botSabeNombre.setOnClickListener {
+
+            textNombre.visibility= View.VISIBLE
+            editNombre.visibility=View.GONE
+            botNombre.visibility=View.VISIBLE
+            botSabeNombre.visibility=View.GONE
+            val mUsuario=editNombre.text.toString()
+            FirebaseAuth.getInstance().currentUser?.let { user ->
+                val email = user.email
+                db.collection("users").document(email.toString()).get()
+                    .addOnSuccessListener { document ->
+                        if (document.exists()) {
+                            nombre = document.data?.get("usuario").toString()
+                            fecha = document.data?.get("fecha").toString()
+                            contraseña = document.data?.get("contraseña").toString()
+                        }
+                    }
+                db.collection("users").document(email.toString()).set(
+                    hashMapOf("usuario" to mUsuario,"fecha" to fecha,"contraseña" to contraseña)
+                )
+                db.collection("users").document(email.toString()).get()
+                    .addOnSuccessListener { document ->
+                        if (document.exists()) {
+                            nombre = document.data?.get("usuario").toString()
+                            textNombre.setText(nombre)
+                        }
+                    } ?: run {
+                        // User is signed out
+                        // ...
+                    }
+            }
+        }
+        botFecha.setOnClickListener{
+            textFecha.visibility= View.GONE
+            editFecha.visibility=View.VISIBLE
+            botFecha.visibility=View.GONE
+            botSabeFecha.visibility=View.VISIBLE
+        }
+        botSabeFecha.setOnClickListener {
+            textFecha.visibility= View.VISIBLE
+            editFecha.visibility=View.GONE
+            botFecha.visibility=View.VISIBLE
+            botSabeFecha.visibility=View.GONE
+            val mFecha=editFecha.text.toString()
+            FirebaseAuth.getInstance().currentUser?.let { user ->
+                val email = user.email
+                db.collection("users").document(email.toString()).get()
+                    .addOnSuccessListener { document ->
+                        if (document.exists()) {
+                            nombre = document.data?.get("usuario").toString()
+                            fecha = document.data?.get("fecha").toString()
+                            contraseña = document.data?.get("contraseña").toString()
+                        }
+                    }
+                db.collection("users").document(email.toString()).set(
+                    hashMapOf("usuario" to nombre,"fecha" to mFecha,"contraseña" to contraseña)
+                )
+                db.collection("users").document(email.toString()).get()
+                    .addOnSuccessListener { document ->
+                        if (document.exists()) {
+                            fecha = document.data?.get("fecha").toString()
+                            textFecha.setText(fecha)
+                        }
+                    }
+            }
+        }
 
         botInicio.setOnClickListener{
             val intento1 = Intent(this,Inicio::class.java)
             startActivity(intento1)
         }
+
 
         botExt.setOnClickListener {
             singOut()
@@ -44,10 +129,12 @@ class Perfil : AppCompatActivity() {
                 if(document.exists()){
                     nombre=document.data?.get("usuario").toString()
                     fecha=document.data?.get("fecha").toString()
-                    text1.setText(nombre)
-                    text2.setText(fecha )
+                    textNombre.setText(nombre)
+                    textFecha.setText(fecha)
+                    editNombre.setText(nombre)
+                    editFecha.setText(fecha)
                 }else{
-                    text1.setText("no se encotro")
+                    textNombre.setText("no se encotro")
                 }
 
             }
