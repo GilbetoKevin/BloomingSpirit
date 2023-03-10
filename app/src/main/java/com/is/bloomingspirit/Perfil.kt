@@ -7,12 +7,14 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.view.isGone
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import com.`is`.bloomingspirit.databinding.ActivityPerfilBinding
+import java.util.regex.Pattern
 
 
 class Perfil : AppCompatActivity() {
@@ -37,12 +39,14 @@ class Perfil : AppCompatActivity() {
         val botSabeFecha = findViewById<Button>(R.id.but_sabe_fecha)
         var editNombre=findViewById<EditText>(R.id.editNombre)
         var editFecha=findViewById<EditText>(R.id.editFecha)
+        var formatoFecha=findViewById<TextView>(R.id.textFormatoFecha)
 
         botNombre.setOnClickListener{
             textNombre.visibility= View.GONE
             editNombre.visibility=View.VISIBLE
             botNombre.visibility=View.GONE
             botSabeNombre.visibility=View.VISIBLE
+
         }
 
         botSabeNombre.setOnClickListener {
@@ -51,6 +55,7 @@ class Perfil : AppCompatActivity() {
             editNombre.visibility=View.GONE
             botNombre.visibility=View.VISIBLE
             botSabeNombre.visibility=View.GONE
+
             val mUsuario=editNombre.text.toString()
             FirebaseAuth.getInstance().currentUser?.let { user ->
                 val email = user.email
@@ -82,33 +87,43 @@ class Perfil : AppCompatActivity() {
             editFecha.visibility=View.VISIBLE
             botFecha.visibility=View.GONE
             botSabeFecha.visibility=View.VISIBLE
+            formatoFecha.visibility=View.VISIBLE
         }
         botSabeFecha.setOnClickListener {
             textFecha.visibility= View.VISIBLE
             editFecha.visibility=View.GONE
             botFecha.visibility=View.VISIBLE
             botSabeFecha.visibility=View.GONE
+            formatoFecha.visibility=View.GONE
+
+            val FechaRegex = Pattern.compile("^([0-2][0-9]|3[0-1])(\\/|-)(0[1-9]|1[0-2])\\2(\\d{4})\$")
             val mFecha=editFecha.text.toString()
-            FirebaseAuth.getInstance().currentUser?.let { user ->
-                val email = user.email
-                db.collection("users").document(email.toString()).get()
-                    .addOnSuccessListener { document ->
-                        if (document.exists()) {
-                            nombre = document.data?.get("usuario").toString()
-                            fecha = document.data?.get("fecha").toString()
-                            contraseña = document.data?.get("contraseña").toString()
+        if(mFecha.isEmpty() || !FechaRegex.matcher(mFecha).matches()){
+            Toast.makeText(this, "Formato de fecha no valido",
+                Toast.LENGTH_SHORT).show()
+        }else{
+                FirebaseAuth.getInstance().currentUser?.let { user ->
+                    val email = user.email
+                    db.collection("users").document(email.toString()).get()
+                        .addOnSuccessListener { document ->
+                            if (document.exists()) {
+                                nombre = document.data?.get("usuario").toString()
+                                fecha = document.data?.get("fecha").toString()
+                                contraseña = document.data?.get("contraseña").toString()
+                            }
                         }
-                    }
-                db.collection("users").document(email.toString()).set(
-                    hashMapOf("usuario" to nombre,"fecha" to mFecha,"contraseña" to contraseña)
-                )
-                db.collection("users").document(email.toString()).get()
-                    .addOnSuccessListener { document ->
-                        if (document.exists()) {
-                            fecha = document.data?.get("fecha").toString()
-                            textFecha.setText(fecha)
+                    db.collection("users").document(email.toString()).set(
+                        hashMapOf("usuario" to nombre, "fecha" to mFecha, "contraseña" to contraseña)
+                    )
+                    db.collection("users").document(email.toString()).get()
+                        .addOnSuccessListener { document ->
+                            if (document.exists()) {
+                                fecha = document.data?.get("fecha").toString()
+                                textFecha.setText(fecha)
+                                editFecha.setText(fecha)
+                            }
                         }
-                    }
+                }
             }
         }
 

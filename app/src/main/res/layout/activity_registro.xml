@@ -80,13 +80,13 @@
 
     <EditText
         android:id="@+id/editTextCorreo"
-        android:elevation="3dp"
         android:layout_width="272dp"
         android:layout_height="40dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/text_login"
         android:drawableStart="@drawable/ic_email"
         android:drawablePadding="5dp"
+        android:elevation="3dp"
         android:ems="10"
         android:fontFamily="@font/segoe"
         android:hint="Correo"
@@ -163,6 +163,7 @@
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
         android:elevation="3dp"
         android:fontFamily="@font/segoe_italic"
         android:text="Mínimo ocho caracteres, al menos una letra y un número:"
@@ -170,6 +171,19 @@
         android:textSize="10sp"
         app:layout_constraintStart_toStartOf="@+id/editTextTextPassword2"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:elevation="3dp"
+        android:fontFamily="@font/segoe_italic"
+        android:text="Formato de Fecha dd/mm/yyyy"
+        android:textColor="#000000"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="@+id/editTextFecha"
+        app:layout_constraintTop_toBottomOf="@+id/editTextFecha" />
 
     <TextView
         android:id="@+id/textView9"

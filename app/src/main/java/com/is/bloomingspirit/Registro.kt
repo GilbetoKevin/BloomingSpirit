@@ -8,14 +8,12 @@ import android.util.Patterns
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import com.`is`.bloomingspirit.databinding.ActivityMainBinding
 import com.`is`.bloomingspirit.databinding.ActivityRegistroBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import java.util.regex.Pattern
-
 
 class Registro : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
@@ -39,8 +37,6 @@ class Registro : AppCompatActivity() {
         val usuario=findViewById<EditText>(R.id.editTextUsuario)
         val fecha=findViewById<EditText>(R.id.editTextFecha)
 
-
-
         enviar.setOnClickListener{
 
             val mEmail=email.text.toString()
@@ -57,6 +53,9 @@ class Registro : AppCompatActivity() {
 
             // Mínimo ocho caracteres, al menos una letra y un número:
             val passwordRegex = Pattern.compile("^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$")
+            // Formaro de fecha
+            val FechaRegex = Pattern.compile("^([0-2][0-9]|3[0-1])(\\/|-)(0[1-9]|1[0-2])\\2(\\d{4})\$")
+
             if(mEmail.isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(mEmail).matches()) {
                 Toast.makeText(this, "Ingrese un email valido.",
                     Toast.LENGTH_SHORT).show()
@@ -66,20 +65,21 @@ class Registro : AppCompatActivity() {
             } else if (mPassword != mRepeatPassword){
                 Toast.makeText(this, "Confirma la contraseña.",
                     Toast.LENGTH_SHORT).show()
+            } else if(mFecha.isEmpty() || !FechaRegex.matcher(mFecha).matches()){
+                Toast.makeText(this, "Formato de fecha no valido",
+                    Toast.LENGTH_SHORT).show()
+            } else if(mUser.isEmpty()){
+                Toast.makeText(this, "Ingrese su nombre de usuario",
+                    Toast.LENGTH_SHORT).show()
             } else {
                 db.collection("users").document(mEmail).set(
                     hashMapOf("usuario" to mUser,"fecha" to mFecha,"contraseña" to mPassword)
                 )
-
                 createAccount(mEmail, mPassword)
                 Toast.makeText(this, "Cuenta registrada con exito",Toast.LENGTH_SHORT).show()
-
             }
         }
-
     }
-
-
     public override fun onStart() {
         super.onStart()
         val currentUser= auth.currentUser
@@ -93,7 +93,6 @@ class Registro : AppCompatActivity() {
 
         }
     }
-
     private fun createAccount(email: String, password: String) {
 
         auth.createUserWithEmailAndPassword(email, password)
@@ -112,6 +111,4 @@ class Registro : AppCompatActivity() {
         val intent = Intent(this, Inicio::class.java)
         this.startActivity(intent)
     }
-
-
 }
