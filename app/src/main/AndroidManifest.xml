@@ -13,6 +13,21 @@
         android:theme="@style/Theme.BloomingSpirit"
         tools:targetApi="31">
         <activity
+            android:name=".Test"
+            android:exported="false" />
+        <activity
+            android:name=".ComidaSaludable"
+            android:exported="false" />
+        <activity
+            android:name=".Meditacion"
+            android:exported="false" />
+        <activity
+            android:name=".NochesRelajantes"
+            android:exported="false" />
+        <activity
+            android:name=".HabitosRutinas"
+            android:exported="false" />
+        <activity
             android:name=".Perfil"
             android:exported="false" />
         <activity

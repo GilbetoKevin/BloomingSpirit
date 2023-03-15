@@ -1,5 +1,6 @@
 package com.`is`.bloomingspirit
 
+import android.app.DatePickerDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -13,6 +14,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
+import java.util.Calendar
 import java.util.regex.Pattern
 
 class Registro : AppCompatActivity() {
@@ -37,6 +39,18 @@ class Registro : AppCompatActivity() {
         val usuario=findViewById<EditText>(R.id.editTextUsuario)
         val fecha=findViewById<EditText>(R.id.editTextFecha)
 
+        fecha.setOnClickListener{
+            val calendario = Calendar.getInstance()
+            val anio = calendario.get(Calendar.YEAR)
+            val mes = calendario.get(Calendar.MONTH)
+            val dia = calendario.get(Calendar.DAY_OF_MONTH)
+
+            val selectorFecha = DatePickerDialog(this, DatePickerDialog.OnDateSetListener{view, anioSeleccionado, mesSeleccionado, diaSeleccionado ->
+                fecha.setText("$diaSeleccionado/${mesSeleccionado+1}/$anioSeleccionado")
+            }, anio, mes, dia)
+            selectorFecha.show()
+        }
+
         enviar.setOnClickListener{
 
             val mEmail=email.text.toString()
@@ -51,33 +65,48 @@ class Registro : AppCompatActivity() {
 
             val mRepeatPassword=contraConf.text.toString()
 
+            val user = Firebase.auth.currentUser
             // Mínimo ocho caracteres, al menos una letra y un número:
             val passwordRegex = Pattern.compile("^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$")
             // Formaro de fecha
-            val FechaRegex = Pattern.compile("^([0-2][0-9]|3[0-1])(\\/|-)(0[1-9]|1[0-2])\\2(\\d{4})\$")
 
-            if(mEmail.isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(mEmail).matches()) {
-                Toast.makeText(this, "Ingrese un email valido.",
-                    Toast.LENGTH_SHORT).show()
-            } else if (mPassword.isEmpty() || !passwordRegex.matcher(mPassword).matches()){
-                Toast.makeText(this, "La contraseña es debil.",
-                    Toast.LENGTH_SHORT).show()
-            } else if (mPassword != mRepeatPassword){
-                Toast.makeText(this, "Confirma la contraseña.",
-                    Toast.LENGTH_SHORT).show()
-            } else if(mFecha.isEmpty() || !FechaRegex.matcher(mFecha).matches()){
-                Toast.makeText(this, "Formato de fecha no valido",
-                    Toast.LENGTH_SHORT).show()
-            } else if(mUser.isEmpty()){
-                Toast.makeText(this, "Ingrese su nombre de usuario",
-                    Toast.LENGTH_SHORT).show()
-            } else {
-                db.collection("users").document(mEmail).set(
-                    hashMapOf("usuario" to mUser,"fecha" to mFecha,"contraseña" to mPassword)
-                )
-                createAccount(mEmail, mPassword)
-                Toast.makeText(this, "Cuenta registrada con exito",Toast.LENGTH_SHORT).show()
-            }
+
+            val auth = FirebaseAuth.getInstance()
+
+            auth.fetchSignInMethodsForEmail(mEmail)
+                .addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        val signInMethods = task.result?.signInMethods
+                        if (signInMethods != null && signInMethods.isNotEmpty()) {
+                            Toast.makeText(this, "Este correo ya existe. ",
+                                Toast.LENGTH_SHORT).show()
+                        } else {
+                            if(mEmail.isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(mEmail).matches()) {
+                                Toast.makeText(this, "Ingrese un email valido.",
+                                    Toast.LENGTH_SHORT).show()
+                            } else if (mPassword.isEmpty() || !passwordRegex.matcher(mPassword).matches()){
+                                Toast.makeText(this, "La contraseña es debil.",
+                                    Toast.LENGTH_SHORT).show()
+                            } else if (mPassword != mRepeatPassword){
+                                Toast.makeText(this, "Confirma la contraseña.",
+                                    Toast.LENGTH_SHORT).show()
+                            } else if(mUser.isEmpty()){
+                                Toast.makeText(this, "Ingrese su nombre de usuario",
+                                    Toast.LENGTH_SHORT).show()
+                            } else {
+                                db.collection("users").document(mEmail).set(
+                                    hashMapOf("usuario" to mUser,"fecha" to mFecha,"contraseña" to mPassword)
+                                )
+                                createAccount(mEmail, mPassword)
+                                Toast.makeText(this, "Cuenta registrada con exito",Toast.LENGTH_SHORT).show()
+                            }
+                        }
+                    } else {
+                        Toast.makeText(this, "Error de conexion",
+                            Toast.LENGTH_SHORT).show()
+                    }
+                }
+
         }
     }
     public override fun onStart() {

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HabitosRutinas">
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="0dp"
+        android:background="#9B5DE5"
+        android:fontFamily="@font/corbel_bold"
+        android:gravity="center"
+        android:text="Define tus hábitos"
+        android:textColor="#FEE440"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/but_perfil"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/ic_usuario"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="@+id/textView1"
+        app:layout_constraintEnd_toEndOf="@+id/textView1"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/but_home"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="350dp"
+        android:background="@drawable/baseline_home_24"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="@+id/textView1"
+        app:layout_constraintEnd_toEndOf="@+id/textView1"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/buttonNoche"
+        android:layout_width="382dp"
+        android:layout_height="285dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="10dp"
+        android:background="#FFFFFF"
+        android:elevation="3dp"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView1" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="380dp"
+        android:layout_height="190dp"
+        android:elevation="3dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="@+id/buttonNoche"
+        app:layout_constraintTop_toTopOf="@+id/buttonNoche"
+        app:srcCompat="@drawable/noche" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:elevation="3dp"
+        android:fontFamily="@font/corbel_bold"
+        android:text="Noches Relajantes "
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/imageView1"
+        app:layout_constraintTop_toBottomOf="@+id/imageView1" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="10dp"
+        android:elevation="3dp"
+        android:fontFamily="@font/segoe"
+        android:text="Mejora tus horarios de sueño y logra relajarte por las noches con sonidos calmantes "
+        android:textColor="#000000"
+        android:textSize="17sp"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+
+
+    <Button
+        android:id="@+id/buttonMedita"
+        android:layout_width="382dp"
+        android:layout_height="285dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:background="#FFFFFF"
+        android:elevation="3dp"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.384"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonNoche" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="380dp"
+        android:layout_height="190dp"
+        android:elevation="3dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="@+id/buttonMedita"
+        app:layout_constraintTop_toTopOf="@+id/buttonMedita"
+        app:srcCompat="@drawable/medita" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:elevation="3dp"
+        android:fontFamily="@font/corbel_bold"
+        android:text="Medita"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"/>
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="10dp"
+        android:elevation="3dp"
+        android:fontFamily="@font/segoe"
+        android:text="Aclara tu mente y relájate, desarrolla habilidades para calmarte en situaciones de estres"
+        android:textColor="#000000"
+        android:textSize="17sp"
+        app:layout_constraintStart_toStartOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+
+
+    <Button
+        android:id="@+id/buttonComida"
+        android:layout_width="382dp"
+        android:layout_height="285dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:background="#FFFFFF"
+        android:elevation="3dp"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.384"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonMedita" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="380dp"
+        android:layout_height="190dp"
+        android:elevation="3dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="@+id/buttonComida"
+        app:layout_constraintTop_toTopOf="@+id/buttonComida"
+        app:srcCompat="@drawable/comidaa" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:elevation="3dp"
+        android:fontFamily="@font/corbel_bold"
+        android:text="Comida saludable"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"/>
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="10dp"
+        android:elevation="3dp"
+        android:fontFamily="@font/segoe"
+        android:text="Mejora tus hábitos alimenticios, aprende recetas saludables y deliciosas"
+        android:textColor="#000000"
+        android:textSize="17sp"
+        app:layout_constraintStart_toStartOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/textView6"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
