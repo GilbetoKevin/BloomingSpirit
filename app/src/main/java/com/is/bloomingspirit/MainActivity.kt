@@ -45,15 +45,20 @@ class MainActivity : AppCompatActivity() {
             val mPassword =text2.text.toString()
 
 
-            when {
-                mEmail.isEmpty() || mPassword.isEmpty() -> {
-                    Toast.makeText(baseContext,"Correo o contraseña incorrectos.",
-                        Toast.LENGTH_SHORT).show()
-                }else -> {
+            if(mEmail.isEmpty() && mPassword.isEmpty()) {
+                Toast.makeText(baseContext, "Los campos de Correo y contraseña estan vacíos",
+                    Toast.LENGTH_SHORT).show()
+            }else if(mEmail.isEmpty()){
+                Toast.makeText( baseContext, "El campo de Correo esta vacío",
+                    Toast.LENGTH_SHORT).show()
+            }else if(mPassword.isEmpty()){
+                Toast.makeText( baseContext, "El campo de contraseña esta vacío",
+                    Toast.LENGTH_SHORT).show()
+            }else {
                 SingIn(mEmail,mPassword)
             }
-            }
         }
+
         boton2.setOnClickListener {
         val intento1= Intent(this,Registro::class.java)
         startActivity(intento1)
@@ -82,7 +87,7 @@ class MainActivity : AppCompatActivity() {
                 onStart()
             }else {
                 Log.w("TAG", "singInWithEmail:failure",task.exception)
-                Toast.makeText(baseContext, "Authentication failed.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(baseContext, "Correo o Contraseña Incorrectos", Toast.LENGTH_SHORT).show()
             }
         }
     }

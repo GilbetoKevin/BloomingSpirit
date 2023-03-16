@@ -68,8 +68,8 @@ class Registro : AppCompatActivity() {
             val user = Firebase.auth.currentUser
             // Mínimo ocho caracteres, al menos una letra y un número:
             val passwordRegex = Pattern.compile("^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$")
-            // Formaro de fecha
-
+            // Formaro de correo
+            val correoRegex = Pattern.compile("^[\\w\\.\\+\\-]+@(hotmail.com|outlook.com|gmail.com|itsmante.edu.mx)\$")
 
             val auth = FirebaseAuth.getInstance()
 
@@ -78,10 +78,10 @@ class Registro : AppCompatActivity() {
                     if (task.isSuccessful) {
                         val signInMethods = task.result?.signInMethods
                         if (signInMethods != null && signInMethods.isNotEmpty()) {
-                            Toast.makeText(this, "Este correo ya existe. ",
+                            Toast.makeText(this, "Este correo ya existe.",
                                 Toast.LENGTH_SHORT).show()
                         } else {
-                            if(mEmail.isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(mEmail).matches()) {
+                            if(mEmail.isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(mEmail).matches()|| !correoRegex.matcher(mEmail).matches()) {
                                 Toast.makeText(this, "Ingrese un email valido.",
                                     Toast.LENGTH_SHORT).show()
                             } else if (mPassword.isEmpty() || !passwordRegex.matcher(mPassword).matches()){
@@ -102,7 +102,7 @@ class Registro : AppCompatActivity() {
                             }
                         }
                     } else {
-                        Toast.makeText(this, "Error de conexion",
+                        Toast.makeText(this, "Error de conexión",
                             Toast.LENGTH_SHORT).show()
                     }
                 }
@@ -131,7 +131,7 @@ class Registro : AppCompatActivity() {
                     this.startActivity(intent)
                 }else{
                     Log.w("TAG", "createUserWithEmail:failure",task.exception)
-                    Toast.makeText(baseContext, "Autentificasion fallida",
+                    Toast.makeText(baseContext, "Autentificasion Fallida",
                         Toast.LENGTH_SHORT).show()
                 }
             }

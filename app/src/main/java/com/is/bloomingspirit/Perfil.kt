@@ -1,5 +1,6 @@
 package com.`is`.bloomingspirit
 
+import android.app.DatePickerDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -14,6 +15,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import com.`is`.bloomingspirit.databinding.ActivityPerfilBinding
+import java.util.*
 import java.util.regex.Pattern
 
 
@@ -48,6 +50,17 @@ class Perfil : AppCompatActivity() {
             botSabeNombre.visibility=View.VISIBLE
 
         }
+        editFecha.setOnClickListener{
+            val calendario = Calendar.getInstance()
+            val anio = calendario.get(Calendar.YEAR)
+            val mes = calendario.get(Calendar.MONTH)
+            val dia = calendario.get(Calendar.DAY_OF_MONTH)
+
+            val selectorFecha = DatePickerDialog(this, DatePickerDialog.OnDateSetListener{ view, anioSeleccionado, mesSeleccionado, diaSeleccionado ->
+                editFecha.setText("$diaSeleccionado/${mesSeleccionado+1}/$anioSeleccionado")
+            }, anio, mes, dia)
+            selectorFecha.show()
+        }
 
         botSabeNombre.setOnClickListener {
 
@@ -55,31 +68,39 @@ class Perfil : AppCompatActivity() {
             editNombre.visibility=View.GONE
             botNombre.visibility=View.VISIBLE
             botSabeNombre.visibility=View.GONE
-
-            val mUsuario=editNombre.text.toString()
-            FirebaseAuth.getInstance().currentUser?.let { user ->
-                val email = user.email
-                db.collection("users").document(email.toString()).get()
-                    .addOnSuccessListener { document ->
-                        if (document.exists()) {
-                            nombre = document.data?.get("usuario").toString()
-                            fecha = document.data?.get("fecha").toString()
-                            contraseña = document.data?.get("contraseña").toString()
+            if(!editNombre.text.toString().isEmpty()) {
+                val mUsuario = editNombre.text.toString()
+                FirebaseAuth.getInstance().currentUser?.let { user ->
+                    val email = user.email
+                    db.collection("users").document(email.toString()).get()
+                        .addOnSuccessListener { document ->
+                            if (document.exists()) {
+                                nombre = document.data?.get("usuario").toString()
+                                fecha = document.data?.get("fecha").toString()
+                                contraseña = document.data?.get("contraseña").toString()
+                            }
                         }
-                    }
-                db.collection("users").document(email.toString()).set(
-                    hashMapOf("usuario" to mUsuario,"fecha" to fecha,"contraseña" to contraseña)
-                )
-                db.collection("users").document(email.toString()).get()
-                    .addOnSuccessListener { document ->
-                        if (document.exists()) {
-                            nombre = document.data?.get("usuario").toString()
-                            textNombre.setText(nombre)
-                        }
-                    } ?: run {
+                    db.collection("users").document(email.toString()).set(
+                        hashMapOf(
+                            "usuario" to mUsuario,
+                            "fecha" to fecha,
+                            "contraseña" to contraseña
+                        )
+                    )
+                    db.collection("users").document(email.toString()).get()
+                        .addOnSuccessListener { document ->
+                            if (document.exists()) {
+                                nombre = document.data?.get("usuario").toString()
+                                textNombre.setText(nombre)
+                            }
+                        } ?: run {
                         // User is signed out
                         // ...
                     }
+                }
+            }else{
+                Toast.makeText(baseContext, "El campo de nombre esta vacío",
+                    Toast.LENGTH_SHORT).show()
             }
         }
         botFecha.setOnClickListener{
@@ -96,35 +117,31 @@ class Perfil : AppCompatActivity() {
             botSabeFecha.visibility=View.GONE
             formatoFecha.visibility=View.GONE
 
-            val FechaRegex = Pattern.compile("^([0-2][0-9]|3[0-1])(\\/|-)(0[1-9]|1[0-2])\\2(\\d{4})\$")
+
             val mFecha=editFecha.text.toString()
-        if(mFecha.isEmpty() || !FechaRegex.matcher(mFecha).matches()){
-            Toast.makeText(this, "Formato de fecha no valido",
-                Toast.LENGTH_SHORT).show()
-        }else{
-                FirebaseAuth.getInstance().currentUser?.let { user ->
-                    val email = user.email
-                    db.collection("users").document(email.toString()).get()
-                        .addOnSuccessListener { document ->
-                            if (document.exists()) {
-                                nombre = document.data?.get("usuario").toString()
-                                fecha = document.data?.get("fecha").toString()
-                                contraseña = document.data?.get("contraseña").toString()
-                            }
+            FirebaseAuth.getInstance().currentUser?.let { user ->
+                val email = user.email
+                db.collection("users").document(email.toString()).get()
+                    .addOnSuccessListener { document ->
+                        if (document.exists()) {
+                            nombre = document.data?.get("usuario").toString()
+                            fecha = document.data?.get("fecha").toString()
+                            contraseña = document.data?.get("contraseña").toString()
                         }
-                    db.collection("users").document(email.toString()).set(
-                        hashMapOf("usuario" to nombre, "fecha" to mFecha, "contraseña" to contraseña)
-                    )
-                    db.collection("users").document(email.toString()).get()
-                        .addOnSuccessListener { document ->
-                            if (document.exists()) {
-                                fecha = document.data?.get("fecha").toString()
-                                textFecha.setText(fecha)
-                                editFecha.setText(fecha)
-                            }
+                    }
+                db.collection("users").document(email.toString()).set(
+                    hashMapOf("usuario" to nombre, "fecha" to mFecha, "contraseña" to contraseña)
+                )
+                db.collection("users").document(email.toString()).get()
+                    .addOnSuccessListener { document ->
+                        if (document.exists()) {
+                            fecha = document.data?.get("fecha").toString()
+                            textFecha.setText(fecha)
+                            editFecha.setText(fecha)
                         }
-                }
+                    }
             }
+
         }
 
         botInicio.setOnClickListener{
