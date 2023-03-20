@@ -40,6 +40,20 @@
         app:layout_constraintStart_toStartOf="@+id/rectangulo_verde"
         app:layout_constraintTop_toBottomOf="@+id/editTextUsuario" />
 
+    <ImageButton
+        android:id="@+id/but_ocultar"
+        android:layout_width="35dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginStart="21dp"
+        android:background="#FFFFFF"
+        android:elevation="2dp"
+        app:layout_constraintEnd_toEndOf="@+id/rectangulo_verde"
+        app:layout_constraintHorizontal_bias="0.85"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword3"
+        app:layout_constraintTop_toBottomOf="@+id/editTextUsuario"
+        app:srcCompat="@drawable/ver_contra" />
+
     <EditText
         android:id="@+id/editTextUsuario"
         android:elevation="2dp"

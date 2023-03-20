@@ -3,10 +3,12 @@ package com.`is`.bloomingspirit
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.InputType
 import android.util.Log
 
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.Toast
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.auth.FirebaseAuth
@@ -33,6 +35,19 @@ class MainActivity : AppCompatActivity() {
         var text1=findViewById<EditText>(R.id.editTextUsuario)
         var text2=findViewById<EditText>(R.id.editTextTextPassword3)
         var botonRecuperacion=findViewById<Button>(R.id.bot_recuperacion)
+
+        val ocultar=findViewById<ImageButton>(R.id.but_ocultar)
+
+
+        ocultar.setOnClickListener {
+            if (text2.inputType == InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD) {
+                text2.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+                ocultar.setImageResource(R.drawable.ocultar_contra)
+            } else {
+                text2.inputType = InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+                ocultar.setImageResource(R.drawable.ver_contra)
+            }
+        }
 
         botonRecuperacion.setOnClickListener{
             val intento1 = Intent(this,RecuperacionContra::class.java)

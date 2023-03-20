@@ -16,19 +16,19 @@ class Inicio : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-
-
         setContentView(R.layout.activity_inicio)
 
         var butPerfil=findViewById<Button>(R.id.but_perfil)
+        var butHabitos=findViewById<Button>(R.id.textViewRosa)
+
         butPerfil.setOnClickListener{
             val intento1 = Intent(this,Perfil::class.java)
             startActivity(intento1)
         }
-
-
-
+        butHabitos.setOnClickListener {
+            val intent = Intent(this, HabitosRutinas::class.java)
+            startActivity(intent)
+        }
     }
 
 }

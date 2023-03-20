@@ -215,5 +215,33 @@
         app:layout_constraintStart_toStartOf="@+id/rectangulo_verde"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
+    <ImageButton
+        android:id="@+id/but_ocultar1"
+        android:layout_width="33dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="10dp"
+        android:background="#FFFFFF"
+        android:elevation="3dp"
+        app:layout_constraintEnd_toEndOf="@+id/rectangulo_verde"
+        app:layout_constraintHorizontal_bias="0.85"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword"
+        app:layout_constraintTop_toBottomOf="@+id/editTextCorreo"
+        app:srcCompat="@drawable/ver_contra" />
+
+    <ImageButton
+        android:id="@+id/but_ocultar2"
+        android:layout_width="33dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="8dp"
+        android:background="#FFFFFF"
+        android:elevation="3dp"
+        app:layout_constraintEnd_toEndOf="@+id/rectangulo_verde"
+        app:layout_constraintHorizontal_bias="0.856"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword2"
+        app:layout_constraintTop_toBottomOf="@+id/editTextCorreo"
+        app:srcCompat="@drawable/ver_contra" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
