@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".NochesRelajantes">
+
     <Button
         android:id="@+id/but_perfil"
         android:layout_width="50dp"
@@ -28,7 +30,7 @@
         android:background="#9B5DE5"
         android:fontFamily="@font/corbel_bold"
         android:gravity="center"
-        android:text="Comida Saludable"
+        android:text="Noches Relajantes"
         android:textColor="#FEE440"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -92,7 +94,7 @@
                 android:layout_width="355dp"
                 android:layout_height="100dp"
                 android:layout_marginTop="10dp"
-                android:background="#4CC9F0"
+                android:background="@drawable/azul2"
                 android:elevation="3dp"
                 app:backgroundTint="@null"
                 app:layout_constraintEnd_toEndOf="@+id/linearLayout1"
@@ -104,29 +106,28 @@
                 android:id="@+id/imageView2"
                 android:layout_width="95dp"
                 android:layout_height="95dp"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="10dp"
                 android:elevation="3dp"
                 app:layout_constraintBottom_toBottomOf="@+id/but_MusicaSuave"
-                app:layout_constraintStart_toStartOf="@+id/but_MusicaSuave"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/but_MusicaSuave"
-                app:layout_constraintVertical_bias="1.0"
                 app:srcCompat="@drawable/musica_suave" />
+
 
             <TextView
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
+                android:layout_marginTop="8dp"
                 android:elevation="3dp"
                 android:fontFamily="@font/corbel_bold"
                 android:text="Musica Suave:"
                 android:textColor="#000000"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="@+id/but_MusicaSuave"
-                app:layout_constraintStart_toEndOf="@+id/imageView2"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout1"
-                app:layout_constraintTop_toTopOf="@+id/linearLayout1"
-                app:layout_constraintVertical_bias="0.207" />
+                app:layout_constraintEnd_toEndOf="@+id/textView4"
+                app:layout_constraintHorizontal_bias="0.008"
+                app:layout_constraintStart_toStartOf="@+id/textView4"
+                app:layout_constraintTop_toTopOf="@+id/but_MusicaSuave" />
 
             <TextView
                 android:id="@+id/textView4"
@@ -137,17 +138,16 @@
                 android:text="Música suave y relajante, como música clásica, ambiental"
                 android:textColor="#000000"
                 android:textSize="17sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/textView3"
+                app:layout_constraintEnd_toEndOf="@+id/but_MusicaSuave"
+                app:layout_constraintStart_toEndOf="@+id/imageView2"
                 app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
 
             <Button
                 android:id="@+id/but_Naturaleza"
                 android:layout_width="355dp"
                 android:layout_height="100dp"
                 android:layout_marginTop="10dp"
-                android:background="#FEE440"
+                android:background="@drawable/amarillo"
                 android:elevation="3dp"
                 app:backgroundTint="@null"
                 app:layout_constraintEnd_toEndOf="@+id/but_MusicaSuave"
@@ -159,18 +159,17 @@
                 android:id="@+id/textView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="115dp"
-                android:layout_marginTop="0dp"
                 android:elevation="3dp"
                 android:fontFamily="@font/corbel_bold"
-                android:text="Dietas:"
+                android:text="Sonidos de naturaleza:"
                 android:textColor="#000000"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="@+id/but_Naturaleza"
-                app:layout_constraintStart_toStartOf="@+id/but_MusicaSuave"
-                app:layout_constraintTop_toBottomOf="@+id/but_MusicaSuave"
-                app:layout_constraintTop_toTopOf="@+id/but_MusicaSuave"
-                app:layout_constraintVertical_bias="0.635" />
+                app:layout_constraintEnd_toEndOf="@+id/textView6"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/textView6"
+                app:layout_constraintTop_toTopOf="@+id/but_Naturaleza"
+                app:layout_constraintVertical_bias="0.04" />
 
             <TextView
                 android:id="@+id/textView6"
@@ -182,8 +181,7 @@
                 android:textColor="#000000"
                 android:textSize="17sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/textView5"
-                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+                tools:layout_editor_absoluteY="148dp" />
 
             <ImageView
                 android:id="@+id/imageView3"
@@ -203,7 +201,7 @@
                 android:layout_width="355dp"
                 android:layout_height="100dp"
                 android:layout_marginTop="10dp"
-                android:background="#9B5DE5"
+                android:background="@drawable/morado"
                 android:elevation="3dp"
                 app:backgroundTint="@null"
                 app:layout_constraintEnd_toEndOf="@+id/but_Naturaleza"
@@ -259,7 +257,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:background="#F68E5B"
+                android:background="@drawable/bot_login"
                 android:fontFamily="@font/corbel_bold"
                 android:text="Regresar"
                 android:textColor="#000000"
