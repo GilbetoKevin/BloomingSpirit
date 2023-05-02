@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".Notificacion">
+
+    <Button
+        android:id="@+id/but_guardar"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/but_morado"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textView38"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:background="#9B5DE5"
+        android:fontFamily="@font/corbel_bold"
+        android:gravity="center"
+        android:text="Notificaciones"
+        android:textColor="#FEE440"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView39"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Selecciona cuando quieres la notificacion"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView38"
+        app:layout_constraintVertical_bias="0.045" />
+
+    <Button
+        android:id="@+id/but_fecha_noty"
+        android:layout_width="170dp"
+        android:layout_height="50dp"
+        android:background="@drawable/amarillo"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.189"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView39"
+        app:layout_constraintVertical_bias="0.079" />
+
+    <TextView
+        android:id="@+id/textView40"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="3dp"
+        android:text="Fecha"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/but_fecha_noty"
+        app:layout_constraintEnd_toEndOf="@+id/but_fecha_noty"
+        app:layout_constraintHorizontal_bias="0.112"
+        app:layout_constraintStart_toStartOf="@+id/but_fecha_noty"
+        app:layout_constraintTop_toTopOf="@+id/but_fecha_noty"
+        app:layout_constraintVertical_bias="0.434" />
+
+    <Button
+        android:id="@+id/but_hora_noty"
+        android:layout_width="170dp"
+        android:layout_height="50dp"
+        android:background="@drawable/amarillo"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.19"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/but_fecha_noty"
+        app:layout_constraintVertical_bias="0.115" />
+
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="50dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="10dp"
+        android:elevation="3dp"
+        app:layout_constraintBottom_toBottomOf="@+id/but_fecha_noty"
+        app:layout_constraintEnd_toEndOf="@+id/but_fecha_noty"
+        app:layout_constraintTop_toTopOf="@+id/but_fecha_noty"
+        app:srcCompat="@drawable/ic_calendario" />
+
+    <TextView
+        android:id="@+id/textView41"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="3dp"
+        android:text="Hora"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/but_hora_noty"
+        app:layout_constraintEnd_toEndOf="@+id/but_hora_noty"
+        app:layout_constraintHorizontal_bias="0.102"
+        app:layout_constraintStart_toStartOf="@+id/but_hora_noty"
+        app:layout_constraintTop_toTopOf="@+id/but_hora_noty"
+        app:layout_constraintVertical_bias="0.565" />
+
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="50dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="10dp"
+        android:elevation="3dp"
+        app:layout_constraintBottom_toBottomOf="@+id/but_hora_noty"
+        app:layout_constraintEnd_toEndOf="@+id/but_hora_noty"
+        app:layout_constraintTop_toTopOf="@+id/but_hora_noty"
+        app:srcCompat="@drawable/temporizador" />
+
+    <ImageView
+        android:id="@+id/imageView18"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:elevation="3dp"
+        app:layout_constraintBottom_toBottomOf="@+id/but_guardar"
+        app:layout_constraintEnd_toEndOf="@+id/but_guardar"
+        app:layout_constraintStart_toStartOf="@+id/but_guardar"
+        app:layout_constraintTop_toTopOf="@+id/but_guardar"
+        app:layout_constraintVertical_bias="0.55"
+        app:srcCompat="@drawable/ic_sabe" />
+
+    <TextView
+        android:id="@+id/textViewFecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@+id/but_fecha_noty"
+        app:layout_constraintTop_toBottomOf="@+id/but_fecha_noty" />
+
+    <TextView
+        android:id="@+id/textViewHora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@+id/but_hora_noty"
+        app:layout_constraintTop_toBottomOf="@+id/but_hora_noty" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

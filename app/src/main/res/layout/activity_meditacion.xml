@@ -9,17 +9,7 @@
     android:background="#FFFFFF"
     tools:context=".Meditacion">
 
-    <Button
-        android:id="@+id/but_perfil3"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="5dp"
-        android:background="@drawable/ic_usuario"
-        app:backgroundTint="@null"
-        app:layout_constraintBottom_toBottomOf="@+id/textView30"
-        app:layout_constraintEnd_toEndOf="@+id/textView30"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:visibility="visible" />
+
 
     <Button
         android:id="@+id/but_inicio3"
@@ -116,7 +106,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="8dp"
         android:elevation="3dp"
-        android:text="Revisa videos que puedan instruirte y ayudarte a realizar ejercicios de meditacion."
+        android:text="Revisa audios que puedan instruirte y ayudarte a realizar ejercicios de meditacion."
         android:textColor="#000000"
         android:textSize="14dp"
         app:layout_constraintBottom_toBottomOf="@+id/button6"
@@ -137,6 +127,7 @@
         app:layout_constraintTop_toTopOf="@+id/button6"
         app:layout_constraintVertical_bias="0.011" />
 
+
     <ImageView
         android:id="@+id/imageView12"
         android:layout_width="98dp"
@@ -145,18 +136,19 @@
         app:layout_constraintBottom_toBottomOf="@+id/button7"
         app:layout_constraintStart_toStartOf="@+id/button7"
         app:layout_constraintTop_toTopOf="@+id/button7"
-        app:srcCompat="@drawable/temporizadorr" />
+        app:srcCompat="@drawable/temporizador" />
 
     <TextView
         android:id="@+id/textView34"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
         android:elevation="3dp"
         android:text="Temporizador:"
         android:textColor="#000000"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="@+id/textView35"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/textView35"
         app:layout_constraintTop_toTopOf="@+id/button7" />
 
@@ -200,12 +192,13 @@
         android:id="@+id/textView36"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:elevation="3dp"
         android:text="Notificaciones:"
         android:textColor="#000000"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="@+id/textView37"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/textView37"
         app:layout_constraintTop_toTopOf="@+id/but_noti" />
 

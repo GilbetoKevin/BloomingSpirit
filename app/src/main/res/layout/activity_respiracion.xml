@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".NochesRelajantes">
-
+    tools:context=".Respiracion">
 
 
     <TextView
@@ -16,7 +15,7 @@
         android:background="#9B5DE5"
         android:fontFamily="@font/corbel_bold"
         android:gravity="center"
-        android:text="Noches Relajantes"
+        android:text="Respiración"
         android:textColor="#FEE440"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,7 +46,7 @@
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView1"
-        app:srcCompat="@drawable/noche_relajante" />
+        app:srcCompat="@drawable/respirando0" />
 
     <TextView
         android:id="@+id/textView2"
@@ -55,7 +54,7 @@
         android:layout_height="45dp"
         android:layout_marginTop="10dp"
         android:gravity="center"
-        android:text="Selecciona una opción para ayudarte a dormir de forma pacifica y relajar tu mente."
+        android:text="Tomate un momento para respirar algo de aire fresco"
         android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -76,7 +75,7 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/but_MusicaSuave"
+                android:id="@+id/but_EjerciciosRespiracion"
                 android:layout_width="355dp"
                 android:layout_height="100dp"
                 android:layout_marginTop="10dp"
@@ -94,10 +93,10 @@
                 android:layout_height="95dp"
                 android:layout_marginStart="10dp"
                 android:elevation="3dp"
-                app:layout_constraintBottom_toBottomOf="@+id/but_MusicaSuave"
+                app:layout_constraintBottom_toBottomOf="@+id/but_EjerciciosRespiracion"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/but_MusicaSuave"
-                app:srcCompat="@drawable/musica_suave" />
+                app:layout_constraintTop_toTopOf="@+id/but_EjerciciosRespiracion"
+                app:srcCompat="@drawable/respirando1" />
 
 
             <TextView
@@ -107,13 +106,13 @@
                 android:layout_marginTop="8dp"
                 android:elevation="3dp"
                 android:fontFamily="@font/corbel_bold"
-                android:text="Musica Suave:"
+                android:text="Ejercicios de respiración:"
                 android:textColor="#000000"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="@+id/textView4"
                 app:layout_constraintHorizontal_bias="0.008"
                 app:layout_constraintStart_toStartOf="@+id/textView4"
-                app:layout_constraintTop_toTopOf="@+id/but_MusicaSuave" />
+                app:layout_constraintTop_toTopOf="@+id/but_EjerciciosRespiracion" />
 
             <TextView
                 android:id="@+id/textView4"
@@ -121,79 +120,24 @@
                 android:layout_height="65dp"
                 android:elevation="3dp"
                 android:gravity="left"
-                android:text="Música suave y relajante, como música clásica, ambiental"
+                android:text="Mejora la manera en la que respiras."
                 android:textColor="#000000"
                 android:textSize="17sp"
-                app:layout_constraintEnd_toEndOf="@+id/but_MusicaSuave"
+                app:layout_constraintEnd_toEndOf="@+id/but_EjerciciosRespiracion"
                 app:layout_constraintStart_toEndOf="@+id/imageView2"
                 app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
-            <Button
-                android:id="@+id/but_Naturaleza"
-                android:layout_width="355dp"
-                android:layout_height="100dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/amarillo"
-                android:elevation="3dp"
-                app:backgroundTint="@null"
-                app:layout_constraintEnd_toEndOf="@+id/but_MusicaSuave"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/but_MusicaSuave" />
-
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:elevation="3dp"
-                android:fontFamily="@font/corbel_bold"
-                android:text="Sonidos de naturaleza:"
-                android:textColor="#000000"
-                android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="@+id/but_Naturaleza"
-                app:layout_constraintEnd_toEndOf="@+id/textView6"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/textView6"
-                app:layout_constraintTop_toTopOf="@+id/but_Naturaleza"
-                app:layout_constraintVertical_bias="0.04" />
-
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="240dp"
-                android:layout_height="65dp"
-                android:elevation="3dp"
-                android:gravity="left"
-                android:text="Como el sonido de la lluvia, el océano o el canto de los pájaros"
-                android:textColor="#000000"
-                android:textSize="17sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView5" />
-
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="95dp"
-                android:layout_height="95dp"
-                android:layout_marginStart="10dp"
-                android:elevation="3dp"
-                app:layout_constraintBottom_toBottomOf="@+id/but_Naturaleza"
-                app:layout_constraintStart_toStartOf="@+id/but_Naturaleza"
-                app:layout_constraintTop_toTopOf="@+id/but_Naturaleza"
-                app:srcCompat="@drawable/sonidos_naturaleza"
-                tools:layout_editor_absoluteX="60dp" />
-
 
             <Button
-                android:id="@+id/but_RuidoBlanco"
+                android:id="@+id/but_Noti"
                 android:layout_width="355dp"
                 android:layout_height="100dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/morado"
                 android:elevation="3dp"
                 app:backgroundTint="@null"
-                app:layout_constraintEnd_toEndOf="@+id/but_Naturaleza"
-                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/but_Naturaleza" />
+                app:layout_constraintTop_toBottomOf="@+id/but_EjerciciosRespiracion" />
 
             <ImageView
                 android:id="@+id/imageView4"
@@ -201,10 +145,10 @@
                 android:layout_height="95dp"
                 android:layout_marginStart="10dp"
                 android:elevation="3dp"
-                app:layout_constraintBottom_toBottomOf="@+id/but_RuidoBlanco"
-                app:layout_constraintStart_toStartOf="@+id/but_RuidoBlanco"
-                app:layout_constraintTop_toTopOf="@+id/but_RuidoBlanco"
-                app:srcCompat="@drawable/ruido_blanco"
+                app:layout_constraintBottom_toBottomOf="@+id/but_Noti"
+                app:layout_constraintStart_toStartOf="@+id/but_Noti"
+                app:layout_constraintTop_toTopOf="@+id/but_Noti"
+                app:srcCompat="@drawable/notificacionn"
                 tools:layout_editor_absoluteX="60dp" />
 
             <TextView
@@ -212,17 +156,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="115dp"
-                android:layout_marginTop="0dp"
+                android:layout_marginTop="8dp"
                 android:elevation="3dp"
                 android:fontFamily="@font/corbel_bold"
-                android:text="Ruido blanco:"
+                android:text="Notificación: "
                 android:textColor="#000000"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="@+id/but_RuidoBlanco"
-                app:layout_constraintStart_toStartOf="@+id/but_Naturaleza"
-                app:layout_constraintTop_toBottomOf="@+id/but_Naturaleza"
-                app:layout_constraintTop_toTopOf="@+id/but_Naturaleza"
-                app:layout_constraintVertical_bias="0.635" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/but_Noti" />
 
             <TextView
                 android:id="@+id/textView8"
@@ -230,7 +171,7 @@
                 android:layout_height="65dp"
                 android:elevation="3dp"
                 android:gravity="left"
-                android:text="Sonidos uniformes y constantes"
+                android:text="Notificarme en momentos para tomar un respiro."
                 android:textColor="#000000"
                 android:textSize="17sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -253,9 +194,11 @@
                 app:layout_constraintEnd_toEndOf="@+id/linearLayout1"
                 app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/but_RuidoBlanco" />
+                app:layout_constraintTop_toBottomOf="@+id/but_Noti" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

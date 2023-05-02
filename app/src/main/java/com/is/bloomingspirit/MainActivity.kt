@@ -111,5 +111,7 @@ class MainActivity : AppCompatActivity() {
     private fun reaload(){
         val intent = Intent (this, Inicio::class.java)
         this.startActivity(intent)
+            finish()
+
     }
 }

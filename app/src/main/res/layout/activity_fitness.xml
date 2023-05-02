@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".HabitosRutinas">
-
+    tools:context=".Fitness">
 
     <TextView
         android:id="@+id/textView"
@@ -50,10 +49,10 @@
             android:background="#9B5DE5"
             android:fontFamily="@font/corbel_bold"
             android:gravity="center"
-            android:text="Define tus hábitos"
-            android:textColor="#FEE440"
-            android:textSize="34sp"
-            app:layout_constraintEnd_toEndOf="parent"
+                android:text="Realiza ejercicios"
+                android:textColor="#FEE440"
+                android:textSize="34sp"
+                app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -71,7 +70,7 @@
                 android:orientation="vertical">
 
                 <Button
-                    android:id="@+id/buttonNoche"
+                    android:id="@+id/buttonEjercicio"
                     android:layout_width="382dp"
                     android:layout_height="285dp"
                     android:background="#FFFFFF"
@@ -89,9 +88,9 @@
                     android:layout_marginStart="4dp"
                     android:elevation="3dp"
                     android:scaleType="centerCrop"
-                    app:layout_constraintStart_toStartOf="@+id/buttonNoche"
-                    app:layout_constraintTop_toTopOf="@+id/buttonNoche"
-                    app:srcCompat="@drawable/noche" />
+                    app:layout_constraintStart_toStartOf="@+id/buttonEjercicio"
+                    app:layout_constraintTop_toTopOf="@+id/buttonEjercicio"
+                    app:srcCompat="@drawable/ejercicio" />
 
                 <TextView
                     android:id="@+id/textView2"
@@ -101,7 +100,7 @@
                     android:layout_marginTop="8dp"
                     android:elevation="3dp"
                     android:fontFamily="@font/corbel_bold"
-                    android:text="Noches Relajantes "
+                    android:text="Ejercicio  "
                     android:textColor="#000000"
                     android:textSize="20sp"
                     app:layout_constraintStart_toStartOf="@+id/imageView1"
@@ -115,7 +114,7 @@
                     android:layout_marginTop="10dp"
                     android:elevation="3dp"
                     android:fontFamily="@font/segoe"
-                    android:text="Mejora tus horarios de sueño y logra relajarte por las noches con sonidos calmantes "
+                    android:text="Realiza calentamientos y ejercicios para ayudara mejorar tu condición física"
                     android:textColor="#000000"
                     android:textSize="17sp"
                     app:layout_constraintStart_toStartOf="@+id/textView2"
@@ -123,7 +122,7 @@
 
 
                 <Button
-                    android:id="@+id/buttonMedita"
+                    android:id="@+id/buttonCorredor"
                     android:layout_width="382dp"
                     android:layout_height="285dp"
                     android:layout_marginStart="10dp"
@@ -132,10 +131,10 @@
                     android:background="#FFFFFF"
                     android:elevation="3dp"
                     app:backgroundTint="@null"
-                    app:layout_constraintEnd_toEndOf="@+id/buttonNoche"
+                    app:layout_constraintEnd_toEndOf="@+id/buttonEjercicio"
                     app:layout_constraintHorizontal_bias="0.384"
-                    app:layout_constraintStart_toStartOf="@+id/buttonNoche"
-                    app:layout_constraintTop_toBottomOf="@+id/buttonNoche" />
+                    app:layout_constraintStart_toStartOf="@+id/buttonEjercicio"
+                    app:layout_constraintTop_toBottomOf="@+id/buttonEjercicio" />
 
                 <ImageView
                     android:id="@+id/imageView2"
@@ -143,9 +142,9 @@
                     android:layout_height="190dp"
                     android:elevation="3dp"
                     android:scaleType="centerCrop"
-                    app:layout_constraintStart_toStartOf="@+id/buttonMedita"
-                    app:layout_constraintTop_toTopOf="@+id/buttonMedita"
-                    app:srcCompat="@drawable/medita" />
+                    app:layout_constraintStart_toStartOf="@+id/buttonCorredor"
+                    app:layout_constraintTop_toTopOf="@+id/buttonCorredor"
+                    app:srcCompat="@drawable/corriendo" />
 
                 <TextView
                     android:id="@+id/textView4"
@@ -155,7 +154,7 @@
                     android:layout_marginTop="8dp"
                     android:elevation="3dp"
                     android:fontFamily="@font/corbel_bold"
-                    android:text="Medita"
+                    android:text="Corredor"
                     android:textColor="#000000"
                     android:textSize="20sp"
                     app:layout_constraintStart_toStartOf="@+id/imageView2"
@@ -169,7 +168,7 @@
                     android:layout_marginTop="10dp"
                     android:elevation="3dp"
                     android:fontFamily="@font/segoe"
-                    android:text="Aclara tu mente y relájate, desarrolla habilidades para calmarte en situaciones de estres"
+                    android:text="Sal al exterior y realiza recorridos largos o cortos, activate y recorre lugares nuevos"
                     android:textColor="#000000"
                     android:textSize="17sp"
                     app:layout_constraintStart_toStartOf="@+id/textView4"
@@ -177,7 +176,7 @@
 
 
                 <Button
-                    android:id="@+id/buttonComida"
+                    android:id="@+id/buttonRespiracion"
                     android:layout_width="382dp"
                     android:layout_height="285dp"
                     android:layout_marginStart="10dp"
@@ -186,9 +185,9 @@
                     android:background="#FFFFFF"
                     android:elevation="3dp"
                     app:backgroundTint="@null"
-                    app:layout_constraintEnd_toEndOf="@+id/buttonMedita"
-                    app:layout_constraintStart_toStartOf="@+id/buttonMedita"
-                    app:layout_constraintTop_toBottomOf="@+id/buttonMedita" />
+                    app:layout_constraintEnd_toEndOf="@+id/buttonCorredor"
+                    app:layout_constraintStart_toStartOf="@+id/buttonCorredor"
+                    app:layout_constraintTop_toBottomOf="@+id/buttonCorredor" />
 
                 <ImageView
                     android:id="@+id/imageView3"
@@ -196,9 +195,9 @@
                     android:layout_height="190dp"
                     android:elevation="3dp"
                     android:scaleType="centerCrop"
-                    app:layout_constraintStart_toStartOf="@+id/buttonComida"
-                    app:layout_constraintTop_toTopOf="@+id/buttonComida"
-                    app:srcCompat="@drawable/comidaa" />
+                    app:layout_constraintStart_toStartOf="@+id/buttonRespiracion"
+                    app:layout_constraintTop_toTopOf="@+id/buttonRespiracion"
+                    app:srcCompat="@drawable/respirando" />
 
                 <TextView
                     android:id="@+id/textView6"
@@ -208,7 +207,7 @@
                     android:layout_marginTop="8dp"
                     android:elevation="3dp"
                     android:fontFamily="@font/corbel_bold"
-                    android:text="Comida saludable"
+                    android:text="Respiración"
                     android:textColor="#000000"
                     android:textSize="20sp"
                     app:layout_constraintStart_toStartOf="@+id/imageView3"
@@ -222,7 +221,7 @@
                     android:layout_marginTop="10dp"
                     android:elevation="3dp"
                     android:fontFamily="@font/segoe"
-                    android:text="Mejora tus hábitos alimenticios, aprende recetas saludables y deliciosas"
+                    android:text="Aprende a hacer ejercicios de inhalación y exhalación para mejorar tu respiracion"
                     android:textColor="#000000"
                     android:textSize="17sp"
                     app:layout_constraintStart_toStartOf="@+id/textView6"
@@ -232,4 +231,5 @@
 
         </ScrollView>
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

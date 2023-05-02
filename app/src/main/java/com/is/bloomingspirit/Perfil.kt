@@ -94,8 +94,7 @@ class Perfil : AppCompatActivity() {
                                 textNombre.setText(nombre)
                             }
                         } ?: run {
-                        // User is signed out
-                        // ...
+
                     }
                 }
             }else{
@@ -145,8 +144,7 @@ class Perfil : AppCompatActivity() {
         }
 
         botInicio.setOnClickListener{
-            val intento1 = Intent(this,Inicio::class.java)
-            startActivity(intento1)
+            onBackPressed()
         }
 
 
@@ -171,14 +169,14 @@ class Perfil : AppCompatActivity() {
 
             }
         } ?: run {
-            // User is signed out
-            // ...
+
         }
 
     }
     private fun singOut(){
         Firebase.auth.signOut()
         val intent= Intent(this, MainActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
     }
 }

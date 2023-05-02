@@ -12,8 +12,8 @@ class NochesRelajantes : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_noches_relajantes)
 
+
         var butHome=findViewById<Button>(R.id.but_home)
-        var butPerfil=findViewById<Button>(R.id.but_perfil)
         var butRegresar=findViewById<Button>(R.id.but_Regresar)
         var butMusicaSuave = findViewById<Button>(R.id.but_MusicaSuave)
         var butMusicaNat = findViewById<Button>(R.id.but_Naturaleza)
@@ -39,17 +39,13 @@ class NochesRelajantes : AppCompatActivity() {
         }
         butHome.setOnClickListener{
             val intent = Intent(this,Inicio::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
-        }
 
-        butPerfil.setOnClickListener{
-            val intent = Intent(this,Perfil::class.java)
-            startActivity(intent)
         }
 
         butRegresar.setOnClickListener{
-            val intent = Intent(this,HabitosRutinas::class.java)
-            startActivity(intent)
+            onBackPressed()
         }
     }
 }

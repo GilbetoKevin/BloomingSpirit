@@ -27,13 +27,13 @@ class AlarmNotification:BroadcastReceiver() {
         val flag = if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) PendingIntent.FLAG_IMMUTABLE else 0
         val pendingIntent: PendingIntent = PendingIntent.getActivity(context, 0, intent, flag)
 
-        val notification = NotificationCompat.Builder(context, Meditacion.MY_CHANNEL_ID)
-            .setSmallIcon(android.R.drawable.ic_delete)
-            .setContentTitle("My title")
-            .setContentText("Esto es un ejemplo <3")
+        val notification = NotificationCompat.Builder(context, Notificacion.MY_CHANNEL_ID)
+            .setSmallIcon(R.drawable.baseline_home_24)
+            .setContentTitle("Es hora de Meditar")
+            .setContentText("Progamaste tu Meditacion a esta hora")
             .setStyle(
                 NotificationCompat.BigTextStyle()
-                    .bigText("Holita holi Holita holi Holita holi Holita holi Holita holi Holita holi Holita holi Holita holi Holita holi Holita holi Holita holi Holita holi Holita holi ")
+                    .bigText("Mediditar reduces tu estrés y la tensión muscular ")
             )
             .setContentIntent(pendingIntent)
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)

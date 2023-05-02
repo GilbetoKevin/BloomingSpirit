@@ -20,9 +20,14 @@ class Inicio : AppCompatActivity() {
 
         var butPerfil=findViewById<Button>(R.id.but_perfil)
         var butHabitos=findViewById<Button>(R.id.textViewRosa)
+        var butFitness=findViewById<Button>(R.id.textViewAzul)
 
         butPerfil.setOnClickListener{
             val intento1 = Intent(this,Perfil::class.java)
+            startActivity(intento1)
+        }
+        butFitness.setOnClickListener{
+            val intento1 = Intent(this,Fitness::class.java)
             startActivity(intento1)
         }
         butHabitos.setOnClickListener {

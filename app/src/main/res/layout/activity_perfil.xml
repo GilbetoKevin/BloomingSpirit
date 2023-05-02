@@ -38,6 +38,7 @@
         android:id="@+id/but_inicio"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:layout_marginStart="5dp"
         android:background="@drawable/baseline_home_24"
         app:backgroundTint="@null"
         app:layout_constraintBottom_toBottomOf="@+id/textView4"
@@ -49,12 +50,12 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
         android:layout_marginTop="10dp"
         android:text="Nombre de usuario"
         android:textColor="#000000"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView17"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <TextView
@@ -120,15 +121,15 @@
         android:id="@+id/bot_cerrarSesion"
         android:layout_width="251dp"
         android:layout_height="55dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginBottom="100dp"
         android:background="@drawable/bot_login"
         android:fontFamily="sans-serif-black"
         android:text="Cerrar Sesión"
         android:textColor="#BF000000"
         app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/but_usuario"
@@ -181,5 +182,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/editFecha"
         app:layout_constraintTop_toTopOf="@+id/textFecha" />
+
+    <ImageView
+        android:id="@+id/imageView17"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:srcCompat="@drawable/perfil" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

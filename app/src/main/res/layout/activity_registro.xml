@@ -219,28 +219,24 @@
         android:id="@+id/but_ocultar1"
         android:layout_width="33dp"
         android:layout_height="30dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:background="#FFFFFF"
         android:elevation="3dp"
-        app:layout_constraintEnd_toEndOf="@+id/rectangulo_verde"
-        app:layout_constraintHorizontal_bias="0.85"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword"
-        app:layout_constraintTop_toBottomOf="@+id/editTextCorreo"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextTextPassword"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword"
+        app:layout_constraintTop_toTopOf="@+id/editTextTextPassword"
         app:srcCompat="@drawable/ver_contra" />
 
     <ImageButton
         android:id="@+id/but_ocultar2"
         android:layout_width="33dp"
         android:layout_height="30dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginEnd="10dp"
         android:background="#FFFFFF"
         android:elevation="3dp"
-        app:layout_constraintEnd_toEndOf="@+id/rectangulo_verde"
-        app:layout_constraintHorizontal_bias="0.856"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextCorreo"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextTextPassword2"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword2"
+        app:layout_constraintTop_toTopOf="@+id/editTextTextPassword2"
         app:srcCompat="@drawable/ver_contra" />
 
 

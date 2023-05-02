@@ -23,13 +23,15 @@ class RecuperacionContra : AppCompatActivity() {
 
         boton1.setOnClickListener {
             val emailAddress= text.text.toString()
-            Firebase.auth.sendPasswordResetEmail(emailAddress).addOnCompleteListener{ task ->
-                if(task.isSuccessful){
-                    Toast.makeText(this,"Correo enviado", Toast.LENGTH_SHORT).show()
-                    val intent= Intent(this, ActivityMainBinding::class.java)
-                    startActivity(intent)
-                }else{
-                    Toast.makeText(this,"Ingrese un email de una cuenta valida.", Toast.LENGTH_SHORT).show()
+            if(text.text.isNotEmpty()){
+                Firebase.auth.sendPasswordResetEmail(emailAddress).addOnCompleteListener{ task ->
+                    if(task.isSuccessful){
+                        Toast.makeText(this,"Correo enviado", Toast.LENGTH_SHORT).show()
+                        val intent= Intent(this, MainActivity::class.java)
+                        startActivity(intent)
+                    }else{
+                        Toast.makeText(this,"Ingrese un email de una cuenta valida.", Toast.LENGTH_SHORT).show()
+                    }
                 }
 
             }

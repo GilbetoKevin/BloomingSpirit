@@ -10,7 +10,7 @@ class HabitosRutinas : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_habitos_rutinas)
         var butHome=findViewById<Button>(R.id.but_home)
-        var butPerfil=findViewById<Button>(R.id.but_perfil)
+
         var butNoches=findViewById<Button>(R.id.buttonNoche)
         var butMeditar=findViewById<Button>(R.id.buttonMedita)
         var butComida=findViewById<Button>(R.id.buttonComida)
@@ -20,10 +20,7 @@ class HabitosRutinas : AppCompatActivity() {
             startActivity(intent)
         }
 
-        butPerfil.setOnClickListener{
-            val intent = Intent(this,Perfil::class.java)
-            startActivity(intent)
-        }
+
 
         butNoches.setOnClickListener{
             val intent = Intent(this,NochesRelajantes::class.java)

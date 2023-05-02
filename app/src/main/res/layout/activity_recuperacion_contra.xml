@@ -22,11 +22,11 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:elevation="3dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:fontFamily="@font/segoe_semibold"
+        android:elevation="3dp"
+        android:fontFamily="sans-serif"
         android:text="Recuperacion de"
         android:textColor="#FEE440"
         android:textSize="30sp"
@@ -37,10 +37,10 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:elevation="3dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/segoe_semibold"
+        android:elevation="3dp"
+        android:fontFamily="sans-serif"
         android:text="Contraseña"
         android:textColor="#FEE440"
         android:textSize="30sp"
