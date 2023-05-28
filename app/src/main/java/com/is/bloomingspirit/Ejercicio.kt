@@ -24,12 +24,13 @@ class Ejercicio : AppCompatActivity() {
         }
         butNoti.setOnClickListener {
             val intent = Intent(this, Notificacion::class.java)
+            intent.putExtra("titulo", "Es hora de Ejercitarse")
+            intent.putExtra("context", "Programaste tu Ejercicio a esta hora")
+            intent.putExtra("bigText", "Ejercitarse regularmente es beneficioso para la salud física y mental.")
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
 
-            butRegresar.setOnClickListener {
-                onBackPressed()
-            }
+
         }
         butCalentamiento.setOnClickListener {
             val intent= Intent(this, Calentamiento::class.java)

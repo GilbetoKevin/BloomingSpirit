@@ -63,31 +63,18 @@
         android:layout_height="wrap_content"
         android:elevation="3dp"
         android:fontFamily="@font/segoe"
-        android:text="su correo en la seccion de spam y despues "
+        android:text="su correo y despues de clic en continuar"
         android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="@+id/rectangulo_verde"
         app:layout_constraintStart_toStartOf="@+id/rectangulo_verde"
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
-
-    <TextView
-        android:id="@+id/textView18"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:elevation="3dp"
-        android:fontFamily="@font/segoe"
-        android:text="de clic en continuar"
-        android:textColor="#000000"
-        app:layout_constraintEnd_toEndOf="@+id/rectangulo_verde"
-        app:layout_constraintHorizontal_bias="0.476"
-        app:layout_constraintStart_toStartOf="@+id/rectangulo_verde"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
 
     <Button
         android:id="@+id/bot_continuar"
         android:layout_width="172dp"
         android:layout_height="50dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/bot_login"
         android:elevation="3dp"
         android:fontFamily="sans-serif-black"
@@ -96,7 +83,7 @@
         app:backgroundTint="@null"
         app:layout_constraintEnd_toEndOf="@+id/rectangulo_verde"
         app:layout_constraintStart_toStartOf="@+id/rectangulo_verde"
-        app:layout_constraintTop_toBottomOf="@+id/textView18" />
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
     <Button
         android:id="@+id/bot_ext"

@@ -21,6 +21,13 @@ class Inicio : AppCompatActivity() {
         var butPerfil=findViewById<Button>(R.id.but_perfil)
         var butHabitos=findViewById<Button>(R.id.textViewRosa)
         var butFitness=findViewById<Button>(R.id.textViewAzul)
+        var butAgenda=findViewById<Button>(R.id.textViewAmarillo)
+        var butTest=findViewById<Button>(R.id.buttonTest)
+
+        butTest.setOnClickListener{
+            val intento1 = Intent(this,Test::class.java)
+            startActivity(intento1)
+        }
 
         butPerfil.setOnClickListener{
             val intento1 = Intent(this,Perfil::class.java)
@@ -33,6 +40,10 @@ class Inicio : AppCompatActivity() {
         butHabitos.setOnClickListener {
             val intent = Intent(this, HabitosRutinas::class.java)
             startActivity(intent)
+        }
+        butAgenda.setOnClickListener{
+            val intento2 = Intent(this,Agenda::class.java)
+            startActivity(intento2)
         }
     }
 

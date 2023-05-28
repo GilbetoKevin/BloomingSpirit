@@ -16,6 +16,7 @@ class Respiracion : AppCompatActivity() {
         var butEjerciciosRespiracion=findViewById<Button>(R.id.but_EjerciciosRespiracion)
 
 
+
         butEjerciciosRespiracion.setOnClickListener{
             val intent = Intent(this,EjerciciosRespiracion::class.java)
 
@@ -30,6 +31,9 @@ class Respiracion : AppCompatActivity() {
         }
         butNoti.setOnClickListener{
             val intent = Intent(this,Notificacion::class.java)
+            intent.putExtra("titulo", "Es hora de Respirar Correctamente ")
+            intent.putExtra("context", "Programaste tus ejercicios de respiración a esta hora")
+            intent.putExtra("bigText", "Los ejercicios de respiración son beneficiosos para reducir el estrés, mejorar la concentración, promover la relajación, aumentar la capacidad pulmonar y mejorar la oxigenación del cuerpo.")
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
 

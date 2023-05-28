@@ -110,8 +110,13 @@ class MainActivity : AppCompatActivity() {
     }
     private fun reaload(){
         val intent = Intent (this, Inicio::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         this.startActivity(intent)
-            finish()
+        finish()
+
+
+    }
+    override fun onBackPressed() {
 
     }
 }

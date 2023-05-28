@@ -7,6 +7,7 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
@@ -18,6 +19,12 @@ class Notificacion : AppCompatActivity() {
     companion object {
         const val MY_CHANNEL_ID = "myChannel"
     }
+    var titulo: String = ""
+    var context: String = ""
+    var bigText: String = ""
+
+
+
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +40,14 @@ class Notificacion : AppCompatActivity() {
         var minutoSelec : Int=0
         var textFecha=findViewById<TextView>(R.id.textViewFecha)
         var textHora=findViewById<TextView>(R.id.textViewHora)
+        titulo = intent.getStringExtra("titulo") ?: ""
+        context = intent.getStringExtra("context") ?: ""
+        bigText = intent.getStringExtra("bigText") ?: ""
+        println(titulo)
+        println(context)
+        println(bigText)
+
+
 
         createChannel()
         butFecha.setOnClickListener{
@@ -68,6 +83,7 @@ class Notificacion : AppCompatActivity() {
 
                 butGuardar.setOnClickListener {
                     scheduleNotification(añoSelec,mesSelec,diaSelec,horaSelec,minutoSelec)
+
                 }
             }
         }
@@ -75,7 +91,11 @@ class Notificacion : AppCompatActivity() {
 
     @RequiresApi(Build.VERSION_CODES.O)
     private fun scheduleNotification(año:Int,mes:Int,dia:Int,hora:Int,minuto:Int) {
+        //val textNoty=findViewById<EditText>(R.id.textNoty)
         val intent = Intent(applicationContext, AlarmNotification::class.java)
+        intent.putExtra("titulo",titulo)
+        intent.putExtra("context", context)
+        intent.putExtra("bigText", bigText)
         val pendingIntent = PendingIntent.getBroadcast(
             applicationContext,
             AlarmNotification.NOTIFICATION_ID,

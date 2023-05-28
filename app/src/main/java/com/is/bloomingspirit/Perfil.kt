@@ -13,6 +13,7 @@ import androidx.core.view.isGone
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.SetOptions
 import com.google.firebase.ktx.Firebase
 import com.`is`.bloomingspirit.databinding.ActivityPerfilBinding
 import java.util.*
@@ -63,14 +64,37 @@ class Perfil : AppCompatActivity() {
         }
 
         botSabeNombre.setOnClickListener {
-
+            println(editNombre.text.toString())
             textNombre.visibility= View.VISIBLE
             editNombre.visibility=View.GONE
             botNombre.visibility=View.VISIBLE
             botSabeNombre.visibility=View.GONE
             if(!editNombre.text.toString().isEmpty()) {
-                val mUsuario = editNombre.text.toString()
                 FirebaseAuth.getInstance().currentUser?.let { user ->
+                    val email = user.email
+                    val actualizacionCampo = HashMap<String, Any>()
+                    actualizacionCampo["usuario"] = editNombre.text.toString()
+
+                    db.collection("users").document(email.toString())
+                        .set(actualizacionCampo, SetOptions.merge())
+                        .addOnSuccessListener {
+
+                                val email = user.email
+
+                                db.collection("users").document(email.toString()).get().addOnSuccessListener { document ->
+                                    if(document.exists()){
+                                        nombre=document.data?.get("usuario").toString()
+                                        textNombre.setText(nombre)
+                                        editNombre.setText(nombre)
+                                    }else{
+                                        textNombre.setText("no se encotro")
+                                    }
+
+                                }
+                            }
+
+                }
+                /*FirebaseAuth.getInstance().currentUser?.let { user ->
                     val email = user.email
                     db.collection("users").document(email.toString()).get()
                         .addOnSuccessListener { document ->
@@ -91,12 +115,13 @@ class Perfil : AppCompatActivity() {
                         .addOnSuccessListener { document ->
                             if (document.exists()) {
                                 nombre = document.data?.get("usuario").toString()
+
                                 textNombre.setText(nombre)
                             }
                         } ?: run {
 
                     }
-                }
+                }*/
             }else{
                 Toast.makeText(baseContext, "El campo de nombre esta vacío",
                     Toast.LENGTH_SHORT).show()
@@ -117,8 +142,27 @@ class Perfil : AppCompatActivity() {
             formatoFecha.visibility=View.GONE
 
 
-            val mFecha=editFecha.text.toString()
+
             FirebaseAuth.getInstance().currentUser?.let { user ->
+                val email = user.email
+                val actualizacionCampo = HashMap<String, Any>()
+                actualizacionCampo["fecha"] = editFecha.text.toString()
+                db.collection("users").document(email.toString())
+                    .set(actualizacionCampo, SetOptions.merge())
+                    .addOnSuccessListener {
+                        db.collection("users").document(email.toString()).get().addOnSuccessListener { document ->
+                            if(document.exists()){
+                                fecha=document.data?.get("fecha").toString()
+                                textFecha.setText(fecha)
+                                editFecha.setText(fecha)
+                            }else{
+                                textFecha.setText("no se encotro")
+                            }
+
+                        }
+                    }
+            }
+            /*FirebaseAuth.getInstance().currentUser?.let { user ->
                 val email = user.email
                 db.collection("users").document(email.toString()).get()
                     .addOnSuccessListener { document ->
@@ -139,7 +183,7 @@ class Perfil : AppCompatActivity() {
                             editFecha.setText(fecha)
                         }
                     }
-            }
+            }*/
 
         }
 
@@ -150,6 +194,7 @@ class Perfil : AppCompatActivity() {
 
         botExt.setOnClickListener {
             singOut()
+
         }
         FirebaseAuth.getInstance().currentUser?.let { user ->
             val email = user.email
@@ -178,5 +223,6 @@ class Perfil : AppCompatActivity() {
         val intent= Intent(this, MainActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
+        finish()
     }
 }

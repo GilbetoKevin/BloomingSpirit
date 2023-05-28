@@ -1,19 +1,21 @@
 package com.`is`.bloomingspirit
 
+import android.annotation.SuppressLint
 import android.app.*
 
 import android.content.Intent
 import android.net.Uri
 import android.os.*
 import androidx.appcompat.app.AppCompatActivity
-import android.view.View
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import java.util.*
 
 
 class Meditacion : AppCompatActivity() {
     private var milliseconds: Long = 0
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -24,6 +26,15 @@ class Meditacion : AppCompatActivity() {
         var butTemporizador=findViewById<Button>(R.id.button7)
         val textView = findViewById<TextView>(R.id.textView35)
         var butNotificacion=findViewById<Button>(R.id.but_noti)
+        var butHome=findViewById<Button>(R.id.but_home)
+
+
+        butHome.setOnClickListener{
+            val intent = Intent(this,Inicio::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            startActivity(intent)
+
+        }
 
         //createChannel()
 
@@ -52,6 +63,9 @@ class Meditacion : AppCompatActivity() {
         butNotificacion.setOnClickListener {
             //scheduleNotification()
             val intent = Intent(this,Notificacion::class.java)
+            intent.putExtra("titulo", "Es hora de meditar")
+            intent.putExtra("context", "Programaste tu Meditacion a esta hora")
+            intent.putExtra("bigText", "Mediditar reduces tu estrés y la tensión muscular ")
             startActivity(intent)
         }
 

@@ -12,7 +12,7 @@
 
 
     <Button
-        android:id="@+id/but_inicio3"
+        android:id="@+id/but_home"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="5dp"

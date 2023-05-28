@@ -15,6 +15,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BloomingSpirit">
         <activity
+            android:name=".Diario"
+            android:exported="false" />
+        <activity
+            android:name=".Agenda"
+            android:exported="false" />
+        <activity
+            android:name=".ResultadosTest"
+            android:exported="false" />
+        <activity
             android:name=".EjerciciosRespiracion"
             android:exported="false" />
         <activity

@@ -46,6 +46,9 @@ class Corredor : AppCompatActivity() {
 
         butNoti.setOnClickListener{
             val intent = Intent(this,Notificacion::class.java)
+            intent.putExtra("titulo", "Es hora de Correr")
+            intent.putExtra("context", "Programaste Correr a esta hora")
+            intent.putExtra("bigText", "Correr es beneficioso para mejorar la condición cardiovascular, fortalecer los músculos, quemar calorías, reducir el estrés, aumentar la resistencia, promover la salud mental y mejorar la salud en general..")
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
 
