@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
@@ -49,6 +50,8 @@ class Diario : AppCompatActivity() {
                         // Ocurrió un error al actualizar el campo
                 }
             }
+            Toast.makeText(this, "Se creo una nueva entrada",
+                Toast.LENGTH_SHORT).show()
 
         }
         FirebaseAuth.getInstance().currentUser?.let { user ->

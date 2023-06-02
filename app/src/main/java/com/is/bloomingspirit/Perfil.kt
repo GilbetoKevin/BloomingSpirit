@@ -17,6 +17,8 @@ import com.google.firebase.firestore.SetOptions
 import com.google.firebase.ktx.Firebase
 import com.`is`.bloomingspirit.databinding.ActivityPerfilBinding
 import java.util.*
+import android.text.InputType
+import android.view.inputmethod.EditorInfo
 import java.util.regex.Pattern
 
 
@@ -41,7 +43,14 @@ class Perfil : AppCompatActivity() {
         val botSabeNombre = findViewById<Button>(R.id.but_sabe_nombre)
         val botSabeFecha = findViewById<Button>(R.id.but_sabe_fecha)
         var editNombre=findViewById<EditText>(R.id.editNombre)
+
+        editNombre.inputType = InputType.TYPE_CLASS_TEXT
+        editNombre.setSingleLine(true)
+
         var editFecha=findViewById<EditText>(R.id.editFecha)
+        editFecha.setSingleLine(true)
+        editFecha.imeOptions = EditorInfo.IME_ACTION_NONE
+
         var formatoFecha=findViewById<TextView>(R.id.textFormatoFecha)
 
         botNombre.setOnClickListener{

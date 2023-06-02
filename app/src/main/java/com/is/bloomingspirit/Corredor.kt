@@ -25,7 +25,7 @@ class Corredor : AppCompatActivity() {
         val butMusicaCorredor = findViewById<Button>(R.id.but_MusicaCorredor)
 
         butMusicaCorredor.setOnClickListener {
-            val playlistLink = "https://open.spotify.com/track/2aQpISWUBToaF84DDiTeRV?si=opRZMXucRlKmrsat7RD62Q" // Reemplaza <ID de la playlist> con el ID de tu playlist de Spotify.
+            val playlistLink = "https://open.spotify.com/playlist/0ZxrNUfRNRkAf6GwITPdFL?si=525c095fa1324511" // Reemplaza <ID de la playlist> con el ID de tu playlist de Spotify.
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse(playlistLink))
             intent.setPackage("com.spotify.music")
             startActivity(intent)
